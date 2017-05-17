@@ -32,7 +32,19 @@ let rules= [
             { loader: 'style-loader' },
             { loader: 'css-loader' }
         ]
-    }
+    },
+    {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: 'url-loader?limit=10000',
+    },
+    {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        use: 'file-loader',
+    },
+    {
+        test: /bootstrap-sass\/assets\/javascripts\//,
+        use: 'imports-loader?jQuery=jquery'
+    },
 ];
 
 module.exports = {

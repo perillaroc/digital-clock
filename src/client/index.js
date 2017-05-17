@@ -1,5 +1,7 @@
 let electron = require('electron');
 let moment = require('moment');
+global.jQuery = require('jquery');
+require('bootstrap-loader');
 require('./main.css');
 
 
