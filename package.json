@@ -12,6 +12,7 @@
     "build": "webpack",
     "build-main": "webpack --config webpack.electron-main.config.js",
     "build-render": "webpack --config webpack.electron-render.config.js",
+    "build-pulish": "asar pack dist/app dist/app.asar",
     "run": "node_modules/.bin/electron .",
     "test": "jest"
   },
@@ -32,7 +33,6 @@
     "electron": "^1.6.6",
     "file-loader": "^0.11.1",
     "jest": "^20.0.0",
-    "jquery": "^3.2.1",
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
     "resolve-url-loader": "^2.0.2",
@@ -48,7 +48,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "js-yaml": "^3.8.3",
-    "moment": "^2.18.1",
-    "tether": "^1.4.0"
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "name": "digital-clock",
+  "homepage": "digital-clock",
+  "description": "",
+  "version": "0.0.1",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "webpack",
+    "build-main": "webpack --config webpack.electron-main.config.js",
+    "build-render": "webpack --config webpack.electron-render.config.js",
+    "build-pulish": "asar pack dist/app dist/app.asar",
+    "run": "node_modules/.bin/electron ."
+  },
+  "author": {
+    "name": "perillaroc",
+    "url": "https://github.com/perillaroc"
+  },
+  "license": "GPLv3",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "js-yaml": "^3.8.3",
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  }
+}
