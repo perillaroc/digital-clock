@@ -10,6 +10,12 @@ body {
     min-height: 100%;
 }
 
+.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 #time_bar {
     display:flex;
     justify-content:center;
