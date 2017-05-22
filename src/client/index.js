@@ -18,7 +18,10 @@ window.addEventListener('load', function(event){
         jQuery('#about_model').modal();
     });
 
-    let current_style = 'black';
+    let current_style = 'white';
+    time_bar.style.backgroundColor = 'black';
+    time_bar.style.color = 'white';
+
     let change_background_button = document.querySelector('#change_background_button');
     change_background_button.addEventListener('click', function(event){
         if(current_style === 'black') {
