@@ -1,30 +1,30 @@
 'use strict';
-let path = require('path');
-let webpack = require('webpack');
-let CopyWebPackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebPackPlugin = require('copy-webpack-plugin');
 
-let nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
-let entry= {
+const entry= {
     index: './src/app/main.js'
 };
 
-let modules= {
+const modules= {
     rules: [
         {
         }
     ]
 };
 
-let resolve = {};
+const resolve = {};
 
-let plugins = [
+const plugins = [
     new CopyWebPackPlugin([
         {'from': './src/app'}
     ])
 ];
 
-let externals= {};
+const externals= {};
 
 module.exports = {
     devtool: "source-map",

@@ -9,23 +9,24 @@ const {app, BrowserWindow} = electron;
 let mainWindow;
 
 function createWindow () {
-    mainWindow = new BrowserWindow({width: 1920, height: 1080});
-    mainWindow.maximize();
+  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
+  mainWindow = new BrowserWindow({width: width, height: height});
+  mainWindow.maximize();
 
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'client/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
 
-    //mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
-    mainWindow.on('closed', function () {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
-        mainWindow = null
-    })
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null
+  })
 }
 
 // This method will be called when Electron has finished
@@ -34,19 +35,19 @@ function createWindow () {
 global.image_list = [];
 
 app.on('ready', function(){
-    createWindow();
+  createWindow();
 });
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
-        app.quit()
-    }
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
 });
 
 app.on('activate', function () {
-    if (mainWindow === null) {
-        createWindow()
-    }
+  if (mainWindow === null) {
+    createWindow()
+  }
 });
 
 // In this file you can include the rest of your app's specific main process
